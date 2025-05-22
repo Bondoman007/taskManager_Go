@@ -82,7 +82,7 @@ go run main.go
 
 -Each Go package handles one responsibility (routing, service logic, etc.).
 
-🔹 Scalable Architecture
+#### 🔹 Scalable Architecture
 
 -Stateless design (easy to scale horizontally).
 
