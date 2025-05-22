@@ -80,7 +80,7 @@ go run main.go
 ### 🧱 Microservices Concepts Demonstrated
 #### 🔹 Single Responsibility
 
--Each Go package handles one responsibility (routing, service logic, etc.).
+- Each Go package handles one responsibility (routing, service logic, etc.).
 
 #### 🔹 Scalable Architecture
 
