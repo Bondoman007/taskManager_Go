@@ -10,6 +10,10 @@ import (
 func SetupRouter() http.Handler {
 	r := chi.NewRouter()
 
+	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Write([]byte("Welcome to the Task Manager API!"))
+	})
+
 	r.Route("/tasks", func(r chi.Router) {
 		r.Get("/", handlers.GetTasks)
 		r.Post("/", handlers.CreateTask)
