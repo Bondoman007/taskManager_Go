@@ -18,6 +18,12 @@ func CreateTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// ✅ Validate status
+	if task.Status != "Pending" && task.Status != "Completed" {
+		http.Error(w, "Invalid status — must be 'Pending' or 'Completed'", http.StatusBadRequest)
+		return
+	}
+
 	task.ID = uuid.New().String()
 	services.CreateTask(task)
 
@@ -60,11 +66,29 @@ func DeleteTask(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(http.StatusNoContent)
 }
+
 func GetTasks(w http.ResponseWriter, r *http.Request) {
 	status := r.URL.Query().Get("status")
 	pageStr := r.URL.Query().Get("page")
 	limitStr := r.URL.Query().Get("limit")
 
+	// ✅ Validate status if provided
+	if status != "" && status != "Pending" && status != "Completed" {
+		http.Error(w, "Invalid status filter — must be 'Pending' or 'Completed'", http.StatusBadRequest)
+		return
+	}
+
 	tasks := services.GetAllTasks(status, pageStr, limitStr)
+	json.NewEncoder(w).Encode(tasks)
+}
+
+
+func GetTasksByStatus(w http.ResponseWriter, r *http.Request) {
+	status := chi.URLParam(r, "status")
+	if status != "Pending" && status != "Completed" {
+		http.Error(w, "Invalid status — must be 'Pending' or 'Completed'", http.StatusBadRequest)
+		return
+	}
+	tasks := services.GetTasksByStatus(status)
 	json.NewEncoder(w).Encode(tasks)
 }

@@ -20,6 +20,7 @@ func SetupRouter() http.Handler {
 		r.Get("/{id}", handlers.GetTask)
 		r.Put("/{id}", handlers.UpdateTask)
 		r.Delete("/{id}", handlers.DeleteTask)
+		r.Get("/status/{status}", handlers.GetTasksByStatus)
 	})
 
 	return r

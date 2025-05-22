@@ -8,18 +8,15 @@ import (
 	"github.com/Bondoman007/taskManager_Go/models"
 )
 
-// CreateTask adds a task to the in-memory DB
 func CreateTask(task models.Task) {
 	db.Tasks[task.ID] = task
 }
 
-// GetTask retrieves a task by ID
 func GetTask(id string) (models.Task, bool) {
 	task, exists := db.Tasks[id]
 	return task, exists
 }
 
-// UpdateTask modifies an existing task
 func UpdateTask(id string, updated models.Task) bool {
 	if _, exists := db.Tasks[id]; !exists {
 		return false
@@ -28,7 +25,6 @@ func UpdateTask(id string, updated models.Task) bool {
 	return true
 }
 
-// DeleteTask removes a task
 func DeleteTask(id string) bool {
 	if _, exists := db.Tasks[id]; !exists {
 		return false
@@ -37,18 +33,15 @@ func DeleteTask(id string) bool {
 	return true
 }
 
-
 func GetAllTasks(filterStatus, pageStr, limitStr string) []models.Task {
 	all := []models.Task{}
 
-	// Collect matching tasks
 	for _, task := range db.Tasks {
 		if filterStatus == "" || strings.EqualFold(task.Status, filterStatus) {
 			all = append(all, task)
 		}
 	}
 
-	// Apply pagination
 	page, _ := strconv.Atoi(pageStr)
 	limit, _ := strconv.Atoi(limitStr)
 
@@ -70,4 +63,16 @@ func GetAllTasks(filterStatus, pageStr, limitStr string) []models.Task {
 	}
 
 	return all[start:end]
+}
+
+func GetTasksByStatus(status string) []models.Task {
+	filtered := []models.Task{}
+
+	for _, task := range db.Tasks {
+		if strings.EqualFold(task.Status, status) {
+			filtered = append(filtered, task)
+		}
+	}
+
+	return filtered
 }
