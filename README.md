@@ -79,15 +79,15 @@ go run main.go
 
 ### 🧱 Microservices Concepts Demonstrated
 🔹 Single Responsibility
-   -Each Go package handles one responsibility (routing, service logic, etc.).
+-Each Go package handles one responsibility (routing, service logic, etc.).
 
 🔹 Scalable Architecture
-    -Stateless design (easy to scale horizontally).
-    -Real database can replace in-memory map easily.
-    -REST APIs designed for easy consumption and expansion.
+-Stateless design (easy to scale horizontally).
 
-🔹 Inter-Service Communication (Future Scope)
-    -If extended with more microservices (e.g., User service), communication can happen via:
+-Real database can replace in-memory map easily.
+
+-REST APIs designed for easy consumption and expansion.
+
 ### ✨ Future Improvements
 Add a real database (e.g., PostgreSQL)
 
