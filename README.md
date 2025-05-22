@@ -53,9 +53,19 @@ taskManager_Go/
 ```bash
 git clone https://github.com/Bondoman007/taskManager_Go.git
 cd taskManager_Go
+```
+### 2. Initialize Go Modules
+```bash
 go mod tidy
+```
+### 3. Run the Server
+```bash
 go run main.go
 ```
+
+go mod tidy
+go run main.go
+
 
 ### 📡 API Documentation
 | Method | Endpoint                 | Description                                               |
