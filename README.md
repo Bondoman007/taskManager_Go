@@ -77,5 +77,25 @@ go run main.go
 | DELETE | `/tasks/{id}`            | Delete a task by ID                                       |
 | GET    | `/tasks/status/{status}` | Get tasks by status only (`Pending` or `Completed`)       |
 
+### 🧱 Microservices Concepts Demonstrated
+🔹 Single Responsibility
+   -Each Go package handles one responsibility (routing, service logic, etc.).
+
+🔹 Scalable Architecture
+    -Stateless design (easy to scale horizontally).
+    -Real database can replace in-memory map easily.
+    -REST APIs designed for easy consumption and expansion.
+
+🔹 Inter-Service Communication (Future Scope)
+    -If extended with more microservices (e.g., User service), communication can happen via:
+### ✨ Future Improvements
+Add a real database (e.g., PostgreSQL)
+
+Add user authentication
+
+Deploy with Docker + Kubernetes
+
+Add unit & integration tests
+
 ### 👨‍💻 Author
 Made with ❤️ by Kanishk Shrivastava 
