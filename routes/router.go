@@ -3,7 +3,7 @@ package routes
 import (
 	"net/http"
 
-	"github.com/Bondoman007/task-service/handlers"
+	"github.com/Bondoman007/taskManager_Go/handlers"
 	"github.com/go-chi/chi/v5"
 )
 
