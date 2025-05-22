@@ -33,3 +33,41 @@ func DeleteTask(id string) bool {
 	delete(db.Tasks, id)
 	return true
 }
+import (
+	"strconv"
+	"strings"
+)
+
+func GetAllTasks(filterStatus, pageStr, limitStr string) []models.Task {
+	all := []models.Task{}
+
+	// Collect matching tasks
+	for _, task := range db.Tasks {
+		if filterStatus == "" || strings.EqualFold(task.Status, filterStatus) {
+			all = append(all, task)
+		}
+	}
+
+	// Apply pagination
+	page, _ := strconv.Atoi(pageStr)
+	limit, _ := strconv.Atoi(limitStr)
+
+	if page <= 0 {
+		page = 1
+	}
+	if limit <= 0 {
+		limit = 10
+	}
+
+	start := (page - 1) * limit
+	end := start + limit
+
+	if start > len(all) {
+		return []models.Task{}
+	}
+	if end > len(all) {
+		end = len(all)
+	}
+
+	return all[start:end]
+}
