@@ -38,8 +38,8 @@ This is a simple Task Management backend service written in Go as part of the Al
 ---
 
 ## 📁 Project Structure
-taskManager_Go/
 ```bash
+taskManager_Go/
 ├── db/
 ├── handlers/
 ├── models/
