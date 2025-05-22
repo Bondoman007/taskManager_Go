@@ -8,8 +8,9 @@ import (
 )
 
 func main() {
-
-	http.ListenAndServe(":8080", routes.SetupRouter())
-	fmt.Println("Starting Task Service on :8080...")
-
+	fmt.Println("Starting Task Service on :8080...") // This will print first
+	err := http.ListenAndServe(":8080", routes.SetupRouter())
+	if err != nil {
+		fmt.Println("Error starting server:", err)
+	}
 }
