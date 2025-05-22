@@ -84,20 +84,16 @@ go run main.go
 
 #### 🔹 Scalable Architecture
 
--Stateless design (easy to scale horizontally).
-
--Real database can replace in-memory map easily.
-
--REST APIs designed for easy consumption and expansion.
+- Stateless design (easy to scale horizontally).
+- Real database can replace in-memory map easily.
+- REST APIs designed for easy consumption and expansion.
 
 ### ✨ Future Improvements
--Add a real database (e.g., PostgreSQL)
 
--Add user authentication
-
--Deploy with Docker + Kubernetes
-
--Add unit & integration tests
+- Add a real database (e.g., PostgreSQL)
+- Add user authentication
+- Deploy with Docker + Kubernetes
+- Add unit & integration tests
 
 ### 👨‍💻 Author
 Made with ❤️ by Kanishk Shrivastava 
