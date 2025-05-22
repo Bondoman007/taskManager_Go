@@ -39,6 +39,7 @@ This is a simple Task Management backend service written in Go as part of the Al
 
 ## 📁 Project Structure
 taskManager_Go/
+```bash
 ├── db/
 ├── handlers/
 ├── models/
@@ -46,6 +47,7 @@ taskManager_Go/
 ├── services/
 ├── main.go
 └── README.md
+```
 ## 🚀 Getting Started
 
 ### 1. Clone the Repository
