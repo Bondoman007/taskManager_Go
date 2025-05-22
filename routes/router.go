@@ -1,0 +1,22 @@
+package routes
+
+import (
+	"net/http"
+
+	"github.com/Bondoman007/task-service/handlers"
+	"github.com/go-chi/chi/v5"
+)
+
+func SetupRouter() http.Handler {
+	r := chi.NewRouter()
+
+	r.Route("/tasks", func(r chi.Router) {
+		r.Get("/", handlers.GetTasks)
+		r.Post("/", handlers.CreateTask)
+		r.Get("/{id}", handlers.GetTask)
+		r.Put("/{id}", handlers.UpdateTask)
+		r.Delete("/{id}", handlers.DeleteTask)
+	})
+
+	return r
+}
