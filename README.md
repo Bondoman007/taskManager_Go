@@ -68,5 +68,5 @@ go run main.go
 | DELETE | `/tasks/{id}`            | Delete a task by ID                                       |
 | GET    | `/tasks/status/{status}` | Get tasks by status only (`Pending` or `Completed`)       |
 
-👨‍💻 Author
+###👨‍💻 Author
 Made with ❤️ by Kanishk Shrivastava 
