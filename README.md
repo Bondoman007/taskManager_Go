@@ -78,7 +78,7 @@ go run main.go
 | GET    | `/tasks/status/{status}` | Get tasks by status only (`Pending` or `Completed`)       |
 
 ### 🧱 Microservices Concepts Demonstrated
-🔹 Single Responsibility
+#### 🔹 Single Responsibility
 
 -Each Go package handles one responsibility (routing, service logic, etc.).
 
