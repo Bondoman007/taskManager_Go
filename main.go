@@ -14,7 +14,6 @@ func main() {
 
     router := routes.SetupRouter()
     
-    // Add simple logging middleware
     loggedRouter := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         log.Printf("Request: %s %s", r.Method, r.URL.Path)
         router.ServeHTTP(w, r)

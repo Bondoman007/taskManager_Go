@@ -18,7 +18,6 @@ func CreateTask(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// ✅ Validate status
 	if task.Status != "Pending" && task.Status != "Completed" {
 		http.Error(w, "Invalid status — must be 'Pending' or 'Completed'", http.StatusBadRequest)
 		return
@@ -72,7 +71,6 @@ func GetTasks(w http.ResponseWriter, r *http.Request) {
 	pageStr := r.URL.Query().Get("page")
 	limitStr := r.URL.Query().Get("limit")
 
-	// ✅ Validate status if provided
 	if status != "" && status != "Pending" && status != "Completed" {
 		http.Error(w, "Invalid status filter — must be 'Pending' or 'Completed'", http.StatusBadRequest)
 		return
