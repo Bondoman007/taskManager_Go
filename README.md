@@ -79,9 +79,11 @@ go run main.go
 
 ### 🧱 Microservices Concepts Demonstrated
 🔹 Single Responsibility
+
 -Each Go package handles one responsibility (routing, service logic, etc.).
 
 🔹 Scalable Architecture
+
 -Stateless design (easy to scale horizontally).
 
 -Real database can replace in-memory map easily.
@@ -89,13 +91,13 @@ go run main.go
 -REST APIs designed for easy consumption and expansion.
 
 ### ✨ Future Improvements
-Add a real database (e.g., PostgreSQL)
+-Add a real database (e.g., PostgreSQL)
 
-Add user authentication
+-Add user authentication
 
-Deploy with Docker + Kubernetes
+-Deploy with Docker + Kubernetes
 
-Add unit & integration tests
+-Add unit & integration tests
 
 ### 👨‍💻 Author
 Made with ❤️ by Kanishk Shrivastava 
