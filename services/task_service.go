@@ -1,6 +1,9 @@
 package services
 
 import (
+	"strconv"
+	"strings"
+
 	"github.com/Bondoman007/taskManager_Go/db"
 	"github.com/Bondoman007/taskManager_Go/models"
 )
@@ -33,10 +36,7 @@ func DeleteTask(id string) bool {
 	delete(db.Tasks, id)
 	return true
 }
-import (
-	"strconv"
-	"strings"
-)
+
 
 func GetAllTasks(filterStatus, pageStr, limitStr string) []models.Task {
 	all := []models.Task{}

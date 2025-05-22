@@ -60,3 +60,11 @@ func DeleteTask(w http.ResponseWriter, r *http.Request) {
 	}
 	w.WriteHeader(http.StatusNoContent)
 }
+func GetTasks(w http.ResponseWriter, r *http.Request) {
+	status := r.URL.Query().Get("status")
+	pageStr := r.URL.Query().Get("page")
+	limitStr := r.URL.Query().Get("limit")
+
+	tasks := services.GetAllTasks(status, pageStr, limitStr)
+	json.NewEncoder(w).Encode(tasks)
+}
